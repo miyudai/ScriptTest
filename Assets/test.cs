@@ -1,9 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//　Lesson4 課題
 public class test : MonoBehaviour
 {
-
+    
     void Start()
     {
         int[] array = new int[5];
@@ -63,7 +64,7 @@ public class Boss
     public void Magic(int mana)
     {
 
-        for (int i = 0; i < 11; i++)
+        for (int i = 0; i <= 10; i++)
         {
 
             if (mp >= 5)
