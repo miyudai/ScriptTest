@@ -2,6 +2,42 @@
 using System.Collections.Generic;
 using UnityEngine;
 //　Lesson4 課題
+
+public class Boss
+{
+    private int hp = 100;
+    private int power = 25;
+    private int mp = 53;
+
+
+    public void Attack()
+    {
+        Debug.Log(this.power + "のダメージを与えた");
+    }
+
+
+    public void Defence(int damage)
+    {
+        Debug.Log(damage + "のダメージを受けた");
+
+        this.hp -= damage;
+    }
+
+    public void Magic(int mana)
+    {
+            if (mp >= 5)
+            {
+                this.mp -= mana;
+                Debug.Log("魔法攻撃をした。残りMPは" + mp);
+
+            }
+            else
+            {
+                Debug.Log("MPが足りないため魔法が使えない。");
+            }
+    }
+}
+
 public class test : MonoBehaviour
 {
     
@@ -32,51 +68,15 @@ public class test : MonoBehaviour
 
             lastboss.Defence(3);
 
-            lastboss.Magic(5);
-           
-        }
+            
+            for (int i = 0; i <= 10; i++)
+            {
+                lastboss.Magic(5);
+            }
+            }
 
          
 
     }
 }
 
-public class Boss
-{
-    private int hp = 100; 
-    private int power = 25;
-    private int mp = 53;
-
-    
-    public void Attack()
-    {
-        Debug.Log(this.power + "のダメージを与えた");
-    }
-
-   
-    public void Defence(int damage)
-    {
-        Debug.Log(damage + "のダメージを受けた");
-        
-        this.hp -= damage;
-    }
-
-    public void Magic(int mana)
-    {
-
-        for (int i = 0; i <= 10; i++)
-        {
-
-            if (mp >= 5)
-            {
-                this.mp -= mana;
-                Debug.Log("魔法攻撃をした。残りMPは" + mp);
-
-            }
-            else
-            {
-                Debug.Log("MPが足りないため魔法が使えない。");
-            }
-        }
-    }
-}
